@@ -5,39 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
+        function cadastrarUsuario(){
+            usuario= new Object();
+        nome = document.getElementById("nomeUsuario").value;
+        idade = document.getElementById("idadeUsuario").value;
+        genero = document.getElementById("generoUsuario").value;
 
-        usuario = new Object();
-        usuario.nome = window.prompt("Digite o nome do usuário");
-        usuario.idade = window.prompt("Digite a idade do usuário");
-        usuario.email = window.prompt ("Digite o email do usuário");
-        usuario.dataNascimento = window.prompt("Digite a data de nascimento do usuário");
+        usuario.nome = nome;
+        usuario.idade = idade;
+        usuario.genero = genero;
         
-        console.log(usuario.nome);
-        console.log(usuario.idade);
-        console.log(usuario.email);
-        console.log(usuario.dataNascimento);
-
-
-         /*
-        nomeUsuario = "";
-        idadeUsuario = "";
-        emailUsuario = "";
-        dataNascimento = "";
-
-        nomeUsuario = window.prompt("Digite o nome do usuário");
-        idadeUsuario = window.prompt("Digite a idade do usuário");
-        emailUsuario = window.prompt("Digite o email do usuário");
-        dataNascimento = window.prompt("Digite a data de nascimento do usuário");
-
-        console.log(nomeUsuario);
-        console.log(idadeUsuario);
-        console.log(emailUsuario);
-        console.log(dataNascimento);
-*/
-
+        console.log("Nome do usuario: "+usuario.nome);
+        console.log("Idade do usuario: "+usuario.idade);
+        console.log("Genero do usuario: "+usuario.genero);
+        }
+        
     </script>
 </head>
 <body>
-    
+    <input type="text" placeholder="Digite o seu nome..." name="nomeUsuario" id="nomeUsuario">
+    <br>
+    <input type="number" placeholder="Digite a sua idade" min="0" max="100" name="idadeUsuario" id="idadeUsuario">
+    <br>
+    <select name="generoUsuario" id="generoUsuario">
+        <option>Selecione uma opção</option>
+        <option>Masculino</option>
+        <option>Feminino</option>
+    </select>
+    <br>
+    <div>
+        <label>Voce tem pet?</label>
+        <br>
+        <input type="radio" name="opcao"><label>Sim</label>
+        <br>
+        <input type="radio" name="opcao"><label>Não</label>
+    </div>
+    <button onclick="cadastrarUsuario()">Salvar</button>
 </body>
 </html>
